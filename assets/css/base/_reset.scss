@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+/* Reset
+------------------------------------------------------------*/
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+legend,
+figure,
+figcaption,
+button,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+	margin: 0;
+	padding: 0;
+}
+address,
+em {
+	font-style: normal;
+}
+strong,
+th {
+	font-weight: normal;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+}
+th {
+	text-align: left;
+}
+main,
+aside {
+	display: block;
+}
+hr {
+	display: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+img,
+fieldset {
+	border: 0;
+}
+img {
+	border:0;
+	vertical-align:top;
+	max-width:100%;
+	height:auto;
+}
+li {
+	list-style-type: none;
+}
+select,
+button {
+	appearance: none;
+}
+input[type="submit"],
+button,
+label,
+select {
+	cursor:pointer;
+	-webkit-appearance: none;
+	border-radius: 0;
+}
+input[type="submit"],
+button {
+	&:hover {
+	}
+}
+select {
+	&::-ms-expand {
+		display: none;
+	}
+}
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}

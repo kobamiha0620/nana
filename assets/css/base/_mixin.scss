@@ -1,0 +1,93 @@
+@charset "utf-8";
+
+@mixin pc {
+	@media only screen and (max-width: $baseWidthWide) {
+		@content;
+	}
+}
+
+@mixin pcmin {
+	@media only screen and (min-width: #{$baseWidthWide + 1}) {
+		@content;
+	}
+}
+
+@mixin tabletL {
+	@media only screen and (max-width: $bpTabletL) {
+		@content;
+	}
+}
+@mixin tabletLmin {
+	@media only screen and (min-width: #{$bpTabletL + 1}) {
+		@content;
+	}
+}
+
+@mixin tabletP {
+	@media only screen and (max-width: $bpTabletP) {
+		@content;
+	}
+}
+
+@mixin tabletPmin {
+	@media only screen and (min-width: #{$bpTabletP + 1}) {
+		@content;
+	}
+}
+
+@mixin sphoneP {
+	@media only screen and (max-width: $bpSphoneP) {
+		@content;
+	}
+}
+
+@mixin sphonePmin {
+	@media only screen and (min-width: #{$bpsphoneP + 1}) {
+		@content;
+	}
+}
+
+// webfont icon
+@mixin iconFont() {
+	font-family: FontAwesome;
+	line-height:1;
+}
+
+// clearfix
+@mixin clearfix() {
+	&:after {
+		content:".";
+		display:block;
+		clear:both;
+		height:0;
+		visibility:hidden;
+	}
+}
+
+// font-size
+@mixin fz($size: $baseFont,$important:false) {
+	font-size: if($important, $size + px!important, $size + px);
+	font-size: if($important, ($size / 10) + rem!important, ($size / 10) + rem);
+}
+
+@mixin animation($animation-name,$s,$easing,$count,$end:none,$delay:0) {
+	animation: $animation-name;
+	animation-duration:$s;
+	animation-timing-function: $easing;
+	animation-iteration-count:$count;
+	animation-fill-mode: $end;
+	animation-delay: $delay;
+}
+
+@mixin accessibilityHidden {
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	margin: -1px;
+}

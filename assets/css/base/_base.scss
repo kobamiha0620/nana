@@ -1,0 +1,634 @@
+@charset "utf-8";
+
+/* link
+------------------------------------------------------------*/
+a {
+    color: $baseColor;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+a,
+button {
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+/* Fonts
+------------------------------------------------------------*/
+
+html {
+    font-size: 62.5%;
+}
+
+/* 10px base */
+
+body {
+    -webkit-text-size-adjust: 100%;
+    overscroll-behavior-y: none;
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    font-family: $baseFontFamily;
+    line-height: $baseLineHeight;
+    color: $baseColor;
+    font-size: $baseFont + px;
+    text-align: left;
+    letter-spacing: 0.02em;
+    overflow-x: hidden;
+
+    @include sphoneP {
+        font-size: $baseFont_sp + px;
+    }
+}
+
+input,
+button,
+textarea,
+select {
+    line-height: $baseLineHeight;
+    color: $baseColor;
+    font-family: $baseFontFamily;
+    //IE11以下は別のフォントを指定する場合
+    // .IEUnder &{
+    // 	font-family: "メイリオ",Verdana, "Hiragino Kaku Gothic ProN",  Meiryo, sans-serif;
+    // }
+}
+
+[role="tabpanel"][aria-hidden="true"] {
+    display: none;
+}
+
+[role="tabpanel"][aria-hidden="false"] {
+    display: block;
+}
+
+/* *** scroll *** */
+.no_scroll {
+    overflow: hidden;
+}
+
+/* *** fit *** */
+.object-fit {
+    object-fit: cover;
+    font-family: 'object-fit: cover;'
+}
+
+/* *** margin + padding *** */
+.m_auto {
+    margin: auto;
+}
+
+@for $i from 0 through 20 {
+    .m_#{$i}rem {
+        margin: $i + rem !important;
+    }
+
+    .m_#{$i}-5rem {
+        margin: $i + .5rem !important;
+    }
+
+    .mr_#{$i}rem {
+        margin-right: $i + rem !important;
+    }
+
+    .mr_#{$i}-5rem {
+        margin-right: $i + .5rem !important;
+    }
+
+    .mb_#{$i}rem {
+        margin-bottom: $i + rem !important;
+    }
+
+    .mb_#{$i}-5rem {
+        margin-bottom: $i + .5rem !important;
+    }
+
+    .mt_#{$i}rem {
+        margin-top: $i + rem !important;
+    }
+
+    .mt_#{$i}-5rem {
+        margin-top: $i + .5rem !important;
+    }
+
+    .p_#{$i}rem {
+        padding: $i + rem !important;
+    }
+
+    .p_#{$i}-5rem {
+        padding: $i + .5rem !important;
+    }
+
+    .pt_#{$i}rem {
+        padding-top: $i + rem !important;
+    }
+
+    .pt_#{$i}-5rem {
+        padding-top: $i + .5rem !important;
+    }
+
+    .pb_#{$i}rem {
+        padding-bottom: $i + rem !important;
+    }
+
+    .pb_#{$i}-5rem {
+        padding-bottom: $i + .5rem !important;
+    }
+
+    .pl_#{$i}rem {
+        padding-left: $i + rem !important;
+    }
+
+    .pl_#{$i}-5rem {
+        padding-left: $i + .5rem !important;
+    }
+
+    .pr_#{$i}rem {
+        padding-right: $i + rem !important;
+    }
+
+    .pr_#{$i}-5rem {
+        padding-right: $i + .5rem !important;
+    }
+}
+
+
+@include sphoneP {
+
+    .sp_m_auto {
+        margin: auto;
+    }
+
+    @for $i from 0 through 10 {
+        .sp_m_#{$i}rem {
+            margin: $i + rem !important;
+        }
+
+        .sp_m_#{$i}-5rem {
+            margin: $i + .5rem !important;
+        }
+
+        .sp_mb_#{$i}rem {
+            margin-bottom: $i + rem !important;
+        }
+
+        .sp_mb_#{$i}-5rem {
+            margin-bottom: $i + .5rem !important;
+        }
+
+        .sp_mt_#{$i}rem {
+            margin-top: $i + rem !important;
+        }
+
+        .sp_mt_#{$i}-5rem {
+            margin-top: $i + .5rem !important;
+        }
+
+        .sp_p_#{$i}rem {
+            padding: $i + rem !important;
+        }
+
+        .sp_p_#{$i}-5rem {
+            padding: $i + .5rem !important;
+        }
+
+        .sp_pt_#{$i}rem {
+            padding-top: $i + rem !important;
+        }
+
+        .sp_pt_#{$i}-5rem {
+            padding-top: $i + .5rem !important;
+        }
+
+        .sp_pb_#{$i}rem {
+            padding-bottom: $i + rem !important;
+        }
+
+        .sp_pb_#{$i}-5rem {
+            padding-bottom: $i + .5rem !important;
+        }
+
+        .sp_pl_#{$i}rem {
+            padding-left: $i + rem !important;
+        }
+
+        .sp_pl_#{$i}-5rem {
+            padding-left: $i + .5rem !important;
+        }
+
+        .sp_pr_#{$i}rem {
+            padding-right: $i + rem !important;
+        }
+
+        .sp_pr_#{$i}-5rem {
+            padding-right: $i + .5rem !important;
+        }
+    }
+}
+
+.box-sizing_bordebox {
+    box-sizing: border-box;
+}
+
+.border-radius {
+    border-radius: 6px;
+}
+
+.container {
+    max-width: $container-lg;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+    min-width: $container-sm;
+
+    @include sphoneP {
+        max-width: $container-sm;
+        min-width: 100%;
+        width: 100%;
+        // padding-left: 1.5rem;
+        // padding-right: 1.5rem;
+    }
+
+    &_1360 {
+        max-width: 1360px;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        box-sizing: border-box;
+
+        @include sphoneP {
+            min-width: 100%;
+            width: 100%;
+            // padding-left: 1.5rem;
+            // padding-right: 1.5rem;
+        }
+    }
+
+    &_1200 {
+        max-width: 1200px;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    &_1000 {
+        max-width: 1000px;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+
+        @media only screen and (max-width: 1000px) {
+            max-width: calc(100% - 6rem);
+            box-sizing: border-box;
+        }
+        @include sphoneP {
+            max-width: calc(100% - 6rem);
+            box-sizing: border-box;
+        }
+
+    }
+
+    &_800 {
+        max-width: 800px;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+
+        @include sphoneP {
+            max-width: calc(100% - 6rem);
+            box-sizing: border-box;
+        }
+    }
+
+    &_660 {
+        max-width: 660px;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+.pc_only {
+    @include sphoneP {
+        display: none !important;
+    }
+}
+
+.sp_only {
+    display: none !important;
+
+    @include sphoneP {
+        display: block !important;
+    }
+}
+
+/* *** width *** */
+
+$widthList: (10: 10%,
+    15:15%,
+    20: 20%,
+    25: 25%,
+    30: 30%,
+    35: 35%,
+    40: 40%,
+    45: 45%,
+    49: 49%,
+    50: 50%,
+    55: 55%,
+    60: 60%,
+    65: 65%,
+    70: 70%,
+    75: 75%,
+    80: 80%,
+    85: 85%,
+    90: 90%,
+    95: 95%,
+    100: 100%,
+);
+
+.w_33per-10px {
+    width: calc(100% / 3 - 10px);
+}
+
+.w_33per {
+    width: calc(100% / 3);
+}
+
+.w_20per-5px {
+    width: calc(100% / 5 - 5px);
+}
+.w_25per-15px {
+    width: calc(100% / 4 - 15px);
+}
+.w_25per-30px {
+    width: calc(100% / 4 - 30px);
+}
+
+.w_33per-15px {
+    width: calc(100% / 3 - 15px);
+}
+
+.w_33per-30px {
+    width: calc(100% / 3 - 30px);
+}
+.w_33per-50px {
+    width: calc(100% / 3 - 50px);
+}
+
+
+.w_50per-10px {
+    width: calc(100% / 2 - 10px);
+}
+
+@include sphoneP {
+
+    .sp_w_50per-10px {
+        width: calc(100% / 2 - 10px);
+
+    }
+
+    .sp_w_33per-15px {
+        width: calc(100% / 3 - 15px);
+    }
+}
+
+@each $wkey,
+$width in $widthList {
+    .w_#{$wkey}per {
+        width: #{$width};
+    }
+
+
+    .sp_w_#{$wkey}per {
+        @include sphoneP {
+            width: #{$width};
+        }
+    }
+
+
+    @include sphoneP {
+        .sp_w_33per {
+            width: calc(100% / 3);
+        }
+    }
+}
+
+/* *** height *** */
+.h_100minus {
+    min-height: calc(100vh - 4rem);
+}
+
+.h_100 {
+    min-height: 100vh;
+}
+
+/* *** flex *** */
+.flex,
+.flex_pc {
+    display: flex;
+
+    &.align-items_center {
+        align-items: center;
+    }
+
+    &.align-items_start {
+        align-items: flex-start;
+    }
+
+    &.align-items_end {
+        align-items: flex-end;
+    }
+    &.align-items_baseline{
+        align-items: baseline;
+    }
+
+    &.justify-content_between {
+        justify-content: space-between;
+    }
+
+    &.justify-content_center {
+        justify-content: center;
+    }
+    &.justify-content_start {
+        justify-content: flex-start;
+    }
+
+    &.justify-content_end {
+        justify-content: flex-end;
+    }
+
+    &.flex_wrap_wrap {
+        flex-wrap: wrap;
+    }
+}
+
+@include sphoneP {
+    .flex {
+        &.sp {
+
+            &_item_center {
+                align-items: center;
+            }
+
+            &_item_baseline {
+                align-items: baseline;
+            }
+
+            &_just_between {
+                justify-content: space-between;
+            }
+
+            &_just_center {
+                justify-content: center;
+            }
+
+            &_just_end {
+                justify-content: flex-end;
+            }
+
+            &_flex_wrap {
+                flex-wrap: wrap;
+            }
+
+            &_flex-direction_column-reverse {
+                flex-direction: column-reverse;
+            }
+        }
+    }
+
+    .flex_pc {
+        display: block;
+    }
+}
+
+.d {
+    &_block {
+        display: block;
+    }
+
+    &_inline-block {
+        display: inline-block;
+    }
+}
+
+/* *** text *** */
+.text {
+    &_left {
+        text-align: left;
+    }
+
+    &_center {
+        text-align: center;
+    }
+
+    &_right {
+        text-align: right;
+    }
+
+    &_white {
+        color: $white;
+    }
+
+    &_black {
+        color: $baseColor !important;
+    }
+
+    &_gray {
+        color: $gray !important;
+    }
+
+    &_small {
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+
+    &_bold {
+        font-weight: bold;
+    }
+
+    &_normal {
+        font-weight: normal;
+    }
+
+    @include sphoneP {
+        &_center_sp {
+            text-align: center;
+        }
+
+        &_left_sp {
+            text-align: left;
+        }
+    }
+}
+.underline{
+    text-decoration: underline;
+}
+.bg{
+    &_white{
+        background: $white;
+    }
+    &_gray{
+        background: $lightgray;
+    }
+}
+/* ***  *** */
+.letter_spacing_0_05em {
+    letter-spacing: 0.05em;
+}
+
+$sizeList: (8: 8,
+    6:6,
+    5_8: 5.8,
+    4_4: 4.4,
+    4_2: 4.2,
+    4: 4,
+    3_4: 3.4,
+    3_2: 3.2,
+    3: 3,
+    2_8: 2.8,
+    2_6: 2.6,
+    2_5: 2.5,
+    2_4: 2.4,
+    2_3: 2.3,
+    2_2: 2.2,
+    2: 2,
+    1_9: 1.9,
+    1_8: 1.8,
+    1_7: 1.7,
+    1_6: 1.6,
+    1_5: 1.5,
+    1_4: 1.4,
+    1_3: 1.3,
+    1_2: 1.2,
+    1_1: 1.1,
+    1: 1,
+    0_9: 0.9,
+    0:0);
+
+@each $key,
+$size in $sizeList {
+    .fo_#{$key} {
+        font-size: #{$size}rem !important;
+    }
+
+    @include sphoneP {
+        .sp_fo_#{$key} {
+            font-size: #{$size}rem !important;
+        }
+    }
+
+    .line-h_#{$key} {
+        line-height: #{$size};
+    }
+}
+
+.marker {
+    background: linear-gradient(transparent 50%, #ffff81 50%);
+    font-weight: bold;
+}
